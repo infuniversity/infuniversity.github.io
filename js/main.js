@@ -1,7 +1,7 @@
 const app = function () {
 	const API_BASE = 'https://script.google.com/a/whoelse.ai/macros/s/AKfycbwtr1sHlOwf8-Lla52vqaz6gLsKHstjapech4IL6w/exec';
 	const API_KEY = 'abcdef';
-	const CATEGORIES = ["aict","nlp","3dprint","blockchain","smart city","mobility","datasci","artificial intelligence","marketing","ar-vr","ux","new work","bio tech","asia","games","pioneer","iot","agile","design thinking","innovation","logistics","language models","business models","green tech","machine learning","security",];
+	const CATEGORIES = ["nlp",];
 
 	const state = {activePage: 1, activeCategory: null};
 	const page = {};

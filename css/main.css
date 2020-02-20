@@ -71,7 +71,6 @@ header, main, footer {
 header {
 	color: white;
 	text-align: center;
-	background: url(img/bike.jpg) no-repeat;
 }
 
 header h1 {

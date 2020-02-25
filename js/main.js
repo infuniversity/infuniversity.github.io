@@ -1,7 +1,7 @@
 const app = function () {
 	const API_BASE = 'https://script.google.com/a/whoelse.ai/macros/s/AKfycbwtr1sHlOwf8-Lla52vqaz6gLsKHstjapech4IL6w/exec';
 	const API_KEY = 'abcdef';
-	const CATEGORIES = ["nlp",];
+	const CATEGORIES = ["nlp","aict"];
 
 	const state = {activePage: 1, activeCategory: null};
 	const page = {};

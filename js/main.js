@@ -1,5 +1,5 @@
 const app = function () {
-	const API_BASE = 'https://script.google.com/macros/s/AKfycbyhlo4iGtAn-A5d4YXT29_4wLfOi2H0KoXjudnxINa1xpzAJT9y/exec';
+	const API_BASE = 'https://script.google.com/a/whoelse.ai/macros/s/AKfycbxtB_N3QmXJd2cGS0RbHok6Hfcm73sUs2IZXb79/exec';
 	const API_KEY = 'abcdef';
 	const CATEGORIES = ["nlp","aict"];
 

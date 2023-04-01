@@ -1,41 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>inf.university</title>
-	<link rel="stylesheet" href="css/normalize.min.css">
-	<link rel="stylesheet" href="css/main.css">
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126222820-4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-126222820-4');
-</script>
-</head>
-<body>
-	<header>
-		<a href="http://inf.university"><img src="img/infuniversitylogo2.png" alt="infuniversity"></a>
-		<!--h1>Generic Blog</h1--	>
-	</header>
-	<main>
-		<!--div class="information">
-			This is an example of a frontend for a blog CMS built using Google Sheets, Google Forms and Google Apps Script which was published as a <a href="https://medium.com/p/c2eab3fb0b2b">Medium article</a>. The blog is designed as a single page application with pagination and category filtering.
-		</div-->
-		<nav class="tags" id="filter"></nav>
-		<div id="container"></div>
-		<div id="notice"></div>
-	</main>
-	<footer>
-		<!--p>These blog posts are from a Google Sheets backend</p-->
-		<!--a href="https://medium.com/p/c2eab3fb0b2b">Read the article on Medium</a-->
-	</footer>
-	<script src="js/main.js"></script>
-	<script>
-		document.addEventListener('DOMContentLoaded', app.init);
-	</script>
-</body>
+<html>
+  <head>
+    <title>The Infinite University</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+      header {
+        background-color: #222;
+        color: #fff;
+        padding: 1em;
+      }
+      h1 {
+        margin: 0;
+        font-size: 2em;
+      }
+      .article {
+        display: flex;
+        flex-direction: column;
+        margin: 1em;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      .article img {
+        width: 100%;
+        height: auto;
+      }
+      .article h2 {
+        margin: 0;
+        padding: 1em;
+        font-size: 1.5em;
+      }
+      .article p {
+        margin: 0;
+        padding: 1em;
+        font-size: 1.2em;
+        color: #444;
+        line-height: 1.5;
+        flex-grow: 1;
+      }
+      .article a {
+        display: block;
+        padding: 1em;
+        background-color: #222;
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        text-align: center;
+        border-top: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>The Infinite University</h1>
+    </header>
+    <main>
+      <div class="magazine">
+        <ul id="bookmarks"></ul>
+      </div>
+    </main>
+    <script src="https://sdk.getpocket.com/v3/pocket.js"></script>
+    <script>
+      // Replace YOUR_CONSUMER_KEY and YOUR_ACCESS_TOKEN with your Pocket API credentials
+      var dataString = {"consumer_key":"83555-d0e92a62b0112cec8854686f", "access_token":"c6dc59ad-2418-f4f1-e815-458822","detailType":"complete"};
+      
+      // Retrieve the user's starred articles from Pocket
+      Pocket.get(dataString, function(response) {
+        var bookmarksList = document.getElementById("bookmarks");
+        response.list.forEach(function(item) {
+          var li = document.createElement("li");
+          li.className = "article";
+          var img = document.createElement("img");
+          img.src = item.top_image_url;
+          var h2 = document.createElement("h2");
+          h2.textContent = item.given_title;
+          var p = document.createElement("p");
+          p.textContent = item.excerpt;
+          var a = document.createElement("a");
+          a.href = item.given_url;
+          a.textContent = "Read more";
+          li.appendChild(img);
+          li.appendChild(h2);
+          li.appendChild(p);
+          li.appendChild(a);
+          bookmarksList.appendChild(li);
+        });
+      });
+    </script>
+  </body>
 </html>
